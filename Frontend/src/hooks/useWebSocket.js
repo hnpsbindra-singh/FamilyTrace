@@ -2,6 +2,8 @@ import { useEffect, useRef, useCallback, useState } from 'react'
 import { Client } from '@stomp/stompjs'
 import SockJS from 'sockjs-client/dist/sockjs.min.js'
 
+const wsUrl = import.meta.env.VITE_WS_URL || '/ws'
+
 export function useWebSocket(familyIds, onLocationUpdate) {
   const clientRef = useRef(null)
   const [connected, setConnected] = useState(false)
@@ -27,7 +29,7 @@ export function useWebSocket(familyIds, onLocationUpdate) {
     if (ids.length === 0) return
 
     const client = new Client({
-      webSocketFactory: () => new SockJS('/ws'),
+      webSocketFactory: () => new SockJS(wsUrl),
       connectHeaders: { Authorization: `Bearer ${token}` },
       onConnect: () => {
         setConnected(true)
