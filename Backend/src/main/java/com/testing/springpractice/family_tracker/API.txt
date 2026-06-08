@@ -1,0 +1,56 @@
+
+
+FAMILY APIs
+-----------
+
+POST /family/create
+    -> Create a new family and generate a unique family code
+    DONE
+
+POST /family/join
+    -> Join an existing family using family code
+    DONE
+
+GET /family/me
+    -> Get current user's family details
+    done
+
+GET /family/members
+    -> Get all members of the family
+    Done
+
+
+DELETE /family/leave
+    -> Leave the current family
+    Done
+
+
+
+
+LOCATION APIs
+-------------
+
+
+GET /location/me
+    -> Get current user's latest location
+
+GET /location/{familyId}
+    -> Get latest locations of all family members
+
+GET /location/member/{familyId}/{userId}
+    -> Get location of a specific family member
+
+
+
+
+WEBSOCKET
+---------
+
+Connection Endpoint:
+    /ws
+
+Client Sends:
+    /app/location
+
+Family Subscribes:
+    /topic/family/{familyId}

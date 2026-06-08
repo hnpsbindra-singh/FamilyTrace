@@ -1,0 +1,94 @@
+.map-page { height: calc(100vh - 64px); display: flex; flex-direction: column; }
+
+.map-header {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px; margin-bottom: 16px;
+}
+
+.map-title {
+  font-family: var(--font-display); font-size: 28px; font-weight: 400;
+}
+
+.map-sub { font-size: 13px; color: var(--text2); margin-top: 2px; }
+
+.share-btn { padding: 10px 20px; font-size: 14px; }
+
+.sharing-banner {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(95, 207, 158, 0.1);
+  border: 1px solid rgba(95, 207, 158, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 13px; color: var(--green);
+  margin-bottom: 14px;
+}
+
+.sharing-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green);
+  animation: pulse 1.5s ease infinite;
+  flex-shrink: 0;
+}
+
+.map-notice {
+  background: rgba(232, 200, 122, 0.12);
+  border: 1px solid rgba(232, 200, 122, 0.28);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 14px;
+  padding: 10px 14px;
+}
+
+.map-layout {
+  flex: 1; display: flex; gap: 16px; min-height: 0;
+}
+
+.map-container-wrap {
+  flex: 1; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.leaflet-map { width: 100%; height: 100%; min-height: 400px; }
+
+.map-sidebar {
+  width: 220px; min-width: 220px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.map-sidebar-title {
+  font-family: var(--font-display); font-size: 16px; font-weight: 400;
+  margin-bottom: 14px; color: var(--text);
+}
+
+.map-empty { font-size: 13px; color: var(--text3); }
+
+.location-list { display: flex; flex-direction: column; gap: 10px; }
+
+.location-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.location-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  margin-top: 4px; flex-shrink: 0;
+}
+
+.location-name { font-size: 13px; font-weight: 500; }
+.location-coords { font-size: 11px; color: var(--text3); font-family: monospace; margin-top: 2px; }
+.location-time { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+@media (max-width: 768px) {
+  .map-layout { flex-direction: column; }
+  .map-sidebar { width: 100%; min-width: 0; }
+  .map-page { height: auto; }
+  .leaflet-map { min-height: 320px; }
+}
